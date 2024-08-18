@@ -24,7 +24,7 @@ use crate::{
     util::math::wrap_degrees,
 };
 
-use super::{Client, PlayerConfig};
+use super::{client::PlayerConfig, Client};
 
 fn modulus(a: f32, b: f32) -> f32 {
     ((a % b) + b) % b
