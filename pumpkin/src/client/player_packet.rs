@@ -324,10 +324,12 @@ impl Client {
                         let packet = &CHurtAnimation::new(&entity_id, 10.0);
                         self.send_packet(packet).await;
                         client.send_packet(packet).await;
-                        server.broadcast_packet_expect(
-                            &[self.token, token],
-                            &CHurtAnimation::new(&entity_id, 10.0),
-                        ).await
+                        server
+                            .broadcast_packet_expect(
+                                &[self.token, token],
+                                &CHurtAnimation::new(&entity_id, 10.0),
+                            )
+                            .await
                     }
                 } else {
                     self.kick("Interacted with invalid entitiy id").await
